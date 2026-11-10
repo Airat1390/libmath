@@ -69,11 +69,15 @@ namespace libmath
         return 0;
     }
 
-    inline int factorial(int a, int& result) 
+        inline int factorial(int a, int& result) 
     {
         if (a < 0) 
         {
             return -3; 
+        }
+        if (a > 12)
+        {
+            return -5; // Сразу возвращаем переполнение, защищая стек от падения
         }
         if (a == 0 || a == 1) 
         {
@@ -93,5 +97,6 @@ namespace libmath
         result = a * sub_res;
         return 0;
     }
+
 }
 
